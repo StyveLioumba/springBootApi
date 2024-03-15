@@ -8,6 +8,6 @@ RUN mvn clean package -Dmaven.test.skip=true
 # DEPLOY
 FROM openjdk:17
 WORKDIR /app
-COPY --from=build /app/target/*.jar ./app.jar
+COPY --from=build /app/target/demo.jar ./app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
